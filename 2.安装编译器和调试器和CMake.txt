@@ -1,0 +1,15 @@
+C++开发环境的搭建
+
+安装编译器和调试器
+> sudo apt update 更新软件包的来源
+> sudo apt install build-essential gdb 
+检查安装是否成功
+gcc --version
+g++ --version
+gdb --version
+
+安装cmake
+sudo apt install cmake 
+
+检查cmake是否安装成功
+cmake --version

@@ -1,0 +1,35 @@
+vcpkg export 命令
+作用:将你通过vcpkg install安装的第三方C++库打包导出成一份可分发的部署包,便于你在其他机器或项目中使用，而无需重新下载和编译这些库
+语法 vcpkg export [库名...] [选项]
+实例 vcpkg export fmt zlib --raw --output-dir=./exported-libs
+
+vcpkg install 安装包
+vcpkg remove 删除包
+vcpkg x-set-installed
+vcpkg upgrade 
+
+vcpkg x-check-support 检查某个包在当前平台是否受支持(不会编译)
+vcpkg depend-info 显示包的依赖列表(包括传递依赖)
+vcpkg list 列出己安装的库及版本信息
+vcpkg owns 查找某个文件属于那个包
+vcpkg x-package-info 显示包的详细信息(版本、描述、支持的平台等)
+vcpkg portsdiff 比较某两个git提交之间的ports变化
+vcpkg search 搜索可安装的库
+vcpkg update 检查当前己安装的包是否有新版本，只查看可升级包，不执行升级
+
+
+vcpkg add 向vcpkg.json添加一个依赖,管理项目依赖时使用(适用于使用清单模式的项目)
+vcpkg x-add-version 把包的新版本加入versions/目录(用于贡献新版本),给port添加版本(用于PR或私有registry)
+vcpkg create 创建一个新的port包结构(portfile) 快速生成一个基本的port模板
+vcpkg edit 打个某个port的文件夹,默认使用VSCode或$EDITOR,修改或阅读己有的port配置
+vcpkg env 创建一个干净的shell环境，适合调试构建 ,进入独立编译环境，避免本地干扰
+vcpkg format-manifest 自动格式化vcpkg.json文件(对齐缩进、排序等)
+vcpkg hash 获取某个文件的SHA或SHA哈希值
+vcpkg x-init-registry 创建一个空白的git仓库,作为私有registry 搭建私有包管理系统
+vcpkg new 创建一个新的vcpkg.json文件(manifest模板),初始化一个使用清单模式的新项目
+vcpkg x-update-baseline 把清单文件里的baseline更新为registry的最新版本,升级默认依赖版本(常用于团队同步版本)
+
+
+vcpkg ci 构建所有ports,用于持续集成(CI)测试,检查新提交是否破坏构建(常用于自动化测试)
+vcpkg x-ci-verifty-version 校验版本数据库是否正确、完整，开发者用来验证版本信息无误，适合参与维护vcpkg
+vcpkg contact 显示反馈信息(如Github链接),显示官方联系方式或项目主页

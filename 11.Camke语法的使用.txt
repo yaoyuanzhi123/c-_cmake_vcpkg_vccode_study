@@ -1,0 +1,20 @@
+CMake基本语法
+
+    cmake [<options>] <path-to-source>
+
+    <path-to-sources> 是你的项目源码目录(包含CMakeLists.txt的目录)
+    <options>是各种构建选项(如生成器、变量定义等)
+
+
+选项
+-S <dir> 指定源码目录(Source)
+-B <dir> 指定构建目示(Build)
+-G <generator> 指定构建生成器(如Ninja、Unix Makerfiles)
+-D<var>=<var> 设置CMake变量(如编译选项)
+-DCMake_Builder_Type=Release 指定构建类型(Release,Debug)
+--build <dir> 构建指定目录的项目(通常配合-B)
+--install <dir> 安装己构建的项目
+--help 显示帮助
+--version 显示CMake版本
+
+

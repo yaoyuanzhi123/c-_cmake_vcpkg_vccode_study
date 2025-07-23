@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		//CMake编译项目
+		{
+			"label":"CMake Build",
+			"type":"shell",
+			"command":"cmake",
+			"args":[
+				"-S",".",
+				"-B","build",
+				"-DCMAKE_TOOLCHAIN_FILE=/home/kali/opt/vcpkg/scripts/buildsystems/vcpkg.cmake"
+			],
+			"detail": "CMAKE编译",
+			"group":{
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn":["PROJECT CLEAN"]
+		},
+		//Make编译项目
+		{
+			"label":"Make Build",
+			"type":"shell",
+			"command":"cmake",
+			"args":["--build","build"],
+			"group":{
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		//运行项目
+		{
+			"label":"Run Executable",
+			"type":"shell",
+			"command":"./build/my_project",
+			"group":{
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+		//项目清项,删除build目录
+		{
+			"label":"PROJECT CLEAN",
+			"type":"shell",
+			"command":"rm -fr ./build",
+			"group":{
+				"kind": "build",
+				"isDefault": false
+			}
+		}
+	]
+}
